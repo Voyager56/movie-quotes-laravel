@@ -424,7 +424,155 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.text-center {
-  text-align: center;
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.top-10 {
+  top: 2.5rem;
+}
+.top-20 {
+  top: 5rem;
+}
+.left-10 {
+  left: 2.5rem;
+}
+.left-20 {
+  left: 5rem;
+}
+.left-40 {
+  left: 10rem;
+}
+.left-60 {
+  left: 15rem;
+}
+.top-\[-20px\] {
+  top: -20px;
+}
+.top-\[-80px\] {
+  top: -80px;
+}
+.left-0 {
+  left: 0px;
+}
+.top-\[-100px\] {
+  top: -100px;
+}
+.top-\[100px\] {
+  top: 100px;
+}
+.left-\[700px\] {
+  left: 700px;
+}
+.left-\[500px\] {
+  left: 500px;
+}
+.left-\[300px\] {
+  left: 300px;
+}
+.left-\[400px\] {
+  left: 400px;
+}
+.left-\[350px\] {
+  left: 350px;
+}
+.top-\[500px\] {
+  top: 500px;
+}
+.top-\[50px\] {
+  top: 50px;
+}
+.left-\[450px\] {
+  left: 450px;
+}
+.left-\[750px\] {
+  left: 750px;
+}
+.left-\[600px\] {
+  left: 600px;
+}
+.left-\[650px\] {
+  left: 650px;
+}
+.m-5 {
+  margin: 1.25rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+.flex {
+  display: flex;
+}
+.max-w-\[200px\] {
+  max-width: 200px;
+}
+.max-w-\[1000px\] {
+  max-width: 1000px;
+}
+.max-w-\[500px\] {
+  max-width: 500px;
+}
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+.max-w-\[400px\] {
+  max-width: 400px;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.items-baseline {
+  align-items: baseline;
+}
+.justify-center {
+  justify-content: center;
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.p-5 {
+  padding: 1.25rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.align-baseline {
+  vertical-align: baseline;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
