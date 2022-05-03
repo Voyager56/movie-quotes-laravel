@@ -1,5 +1,0 @@
-@props['movie']
-
-<article>
-
-</article>

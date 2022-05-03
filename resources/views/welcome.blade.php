@@ -15,7 +15,9 @@
 </head>
 <body>
 
-
+    @foreach($movies as $movie)
+        <x-movie-card :movie="$movie"/>
+    @endforeach
 
 </body>
 </html>

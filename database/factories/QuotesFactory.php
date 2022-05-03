@@ -18,8 +18,8 @@ class QuotesFactory extends Factory
     public function definition()
     {
         return [
-            'movie_id' => Movie::factory(),
             'text' => $this->faker->sentence,
+            'movie_id' => Movie::factory(),
         ];
     }
 }
