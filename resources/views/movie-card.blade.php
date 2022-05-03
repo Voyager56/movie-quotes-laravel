@@ -1,0 +1,5 @@
+@props['movie']
+
+<article>
+
+</article>
