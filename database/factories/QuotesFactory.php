@@ -10,16 +10,19 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class QuotesFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition()
-    {
-        return [
-            'text' => $this->faker->sentence,
-            'movie_id' => Movie::factory(),
-        ];
-    }
+	/**
+	 * Define the model's default state.
+	 *
+	 * @return array<string, mixed>
+	 */
+	public function definition()
+	{
+		return [
+			'text'     => [
+				'en' => $this->faker->sentence,
+				'ka' => 'ციტატა',
+			],
+			'movie_id' => Movie::factory(),
+		];
+	}
 }

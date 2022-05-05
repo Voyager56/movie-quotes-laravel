@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminMovieController;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MovieController::class, 'index']);
-Route::get('/{movie:slug}', [MovieController::class, 'show']);
+Route::get('/{lang?}', [MovieController::class, 'index']);
+Route::get('/{lang}/{movie:slug}', [MovieController::class, 'show']);
+
+Route::get('{lang}/admin/movies', [AdminMovieController::class, 'index']);
+Route::get('{lang}/admin/{movie:slug}', [AdminMovieController::class, 'create']);

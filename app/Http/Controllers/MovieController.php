@@ -3,20 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
-use Illuminate\Http\Request;
+use App\Models\Quotes;
 
 class MovieController extends Controller
 {
-    //
-    public function index(){
-        return view('welcome', [
-            'movies' => Movie::all()
-        ]);
-    }
+	public function index($lang = 'en')
+	{
+		return view('welcome', [
+			'movie' => Quotes::all()->random()->movie,
+			'lang'  => $lang,
+		]);
+	}
 
-    public function show(Movie $movie){
-        return view('show', [
-            'movie' => $movie
-        ]);
-    }
+	public function show($lang, Movie $movie)
+	{
+		return view('show', [
+			'movie' => $movie,
+			'lang'  => $lang,
+		]);
+	}
 }
