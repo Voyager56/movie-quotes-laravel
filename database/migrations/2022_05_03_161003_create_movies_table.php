@@ -12,7 +12,7 @@ return new class extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('movies.blade.php', function (Blueprint $table) {
+		Schema::create('movies', function (Blueprint $table) {
 			$table->id();
 			$table->timestamps();
 			$table->json('title');
@@ -28,6 +28,6 @@ return new class extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('movies.blade.php');
+		Schema::dropIfExists('movies');
 	}
 };

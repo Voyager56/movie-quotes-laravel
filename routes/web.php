@@ -20,3 +20,4 @@ Route::get('/{lang}/{movie:slug}', [MovieController::class, 'show']);
 
 Route::get('{lang}/admin/movies', [AdminMovieController::class, 'index']);
 Route::get('{lang}/admin/{movie:slug}', [AdminMovieController::class, 'create']);
+Route::post('{lang}/admin/movie', [AdminMovieController::class, 'store']);

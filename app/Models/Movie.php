@@ -14,6 +14,8 @@ class Movie extends Model
 
 	public $translatable = ['title'];
 
+	protected $fillable = ['title', 'thumbnail'];
+
 	public function quotes()
 	{
 		return $this->hasMany(Quotes::class);
