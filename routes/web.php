@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/{lang?}', [MovieController::class, 'index']);
 Route::get('/{lang}/{movie:slug}', [MovieController::class, 'show']);
 
-Route::get('{lang}/admin/movies', [AdminMovieController::class, 'index']);
-Route::get('{lang}/admin/{movie:slug}', [AdminMovieController::class, 'create']);
-Route::post('{lang}/admin/movie', [AdminMovieController::class, 'store']);
+Route::get('/admin/movies/list', [AdminMovieController::class, 'index']);
+Route::get('/admin/movies/create', [AdminMovieController::class, 'create']);
+Route::post('/admin/movie', [AdminMovieController::class, 'store']);
+Route::get('/admin/movies/edit/{movie:slug}', [AdminMovieController::class, 'edit']);

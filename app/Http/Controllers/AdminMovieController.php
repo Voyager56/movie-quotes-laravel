@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Rule;
 
 class AdminMovieController extends Controller
 {
 	public function index()
 	{
 		return view('admin.movies', [
-			'movies' => Movie::all(),
+			'movies' => Movie::paginate(5)->withQueryString(),
 		]);
 	}
 
@@ -24,15 +23,36 @@ class AdminMovieController extends Controller
 
 	public function store()
 	{
-		$movie = request()->validate([
+		$data = request()->validate([
 			'title'           => 'required',
+			'title_ge' 	      => 'required',
 			'thumbnail'       => 'required',
-			//			'slug'            => [Rule::unique('movies', 'slug')],
 		]);
 
-//		$movie['slug'] = Str::slug(request('title'));
+		$movie = [
+			'title'           => [
+				'en' => $data['title'],
+				'ka' => $data['title_ge'],
+			],
+			'thumbnail'       => request()->file('thumbnail')->store('thumbnails'),
+		];
+
+		$movie['slug'] = Str::slug(request('title'));
+
+		$slug = Movie::where('slug', $movie['slug'])->first();
+		if ($slug)
+		{
+			return back()->with('message', 'Movie already exists');
+		}
 
 		Movie::create($movie);
-		return redirect('/admin/movies');
+		return redirect('/admin/movies/list');
+	}
+
+	public function edit(Movie $movie)
+	{
+		return view('admin.edit', [
+			'movie' => $movie,
+		]);
 	}
 }

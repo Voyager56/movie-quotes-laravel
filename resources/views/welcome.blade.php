@@ -17,10 +17,12 @@
 
 
 
-    <div class="flex flex-col absolute left-5 h-[90vh] justify-center">
-        <a href="/en" class="border rounded-full p-3" style="background-color: {{$lang == 'en' ? "white" : "none"}}">en</a>
-        <a href="/ka" class="border rounded-full p-3" style="background-color: {{$lang == 'ka' ? "white" : "none"}}">ka</a>
-    </div>
+{{--    <div class="flex flex-col absolute left-5 h-[90vh] justify-center">--}}
+{{--        <a href="/en" class="border rounded-full p-3" style="background-color: {{$lang == 'en' ? "white" : "none"}}">en</a>--}}
+{{--        <a href="/ka" class="border rounded-full p-3" style="background-color: {{$lang == 'ka' ? "white" : "none"}}">ka</a>--}}
+{{--    </div>--}}
+
+    <x-language-buttons :lang="$lang" route=""/>
 
     <x-movie-card :movie="$movie" :lang="$lang"/>
 

@@ -14,4 +14,16 @@
 </head>
 <body>
     @yield('content')
+
+    <div class="my-5 mx-8">
+        {{$movies->links()}}
+    </div>
+
+
+    @if (session()->has('message'))
+        <div
+            class="fixed bottom-3 right-3 rounded-xl bg-blue-700 text-white text-slim p-3">
+            <p>{{session('message')}}</p>
+        </div>
+    @endif  
 </body>
