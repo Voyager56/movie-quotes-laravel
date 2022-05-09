@@ -5,7 +5,7 @@
         <main class="max-w-lg mx-auto mt-10 bg-gray-100 p-6 rounded-xl border-4 border-gray-300">
             <h1 class="text-center font-bold text-xl mb-10  ">Log In:</h1>
 
-            <form method="POST" action="/login">
+            <form method="POST" action="/en/admin/login">
 
                 @csrf
 

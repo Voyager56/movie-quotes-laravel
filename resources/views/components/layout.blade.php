@@ -22,15 +22,15 @@
                 <a href="/admin/movies/list">Movie List</a>
             @endadmin
 
-            <a href="admin/logout">Log Out</a>
+            <a href="en/admin/logout">Log Out</a>
 
-            <form id="logout-form" method="POST" action="/logout" class="hidden">
+            <form id="logout-form" method="POST" action="en/admin/logout" class="hidden">
                 @csrf
             </form>
         </div>
 
         @else
-            <a href="admin/login" class="text-white text-xs font-bold uppercase ml-3">Log In</a>
+            <a href="/en/admin/login" class="text-white text-xs font-bold uppercase ml-3">Log In</a>
 
         @endauth
     </div>

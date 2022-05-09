@@ -26,9 +26,9 @@ Route::post('/admin/movies', [AdminMovieController::class, 'store']);
 Route::get('/admin/movies/edit/{movie:slug}', [AdminMovieController::class, 'edit']);
 Route::post('/admin/movies/edit/{movie:slug}', [AdminMovieController::class, 'update']);
 
-Route::post('/admin/logout', [SessionController::class, 'destroy']);
-Route::get('/admin/login', [SessionController::class, 'create']);
-Route::post('/admin/login', [SessionController::class, 'store']);
+Route::post('{lang}/admin/logout', [SessionController::class, 'destroy']);
+Route::get('{lang}/admin/login', [SessionController::class, 'create']);
+Route::post('{lang}/admin/login', [SessionController::class, 'store']);
 
 Route::delete('/admin/movies/{movie:slug}/{quote}', [QuotesController::class, 'destroy']);
 Route::post('/admin/movies/edit/{movie:slug}/create', [QuotesController::class, 'store']);
