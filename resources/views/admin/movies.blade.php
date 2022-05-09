@@ -49,6 +49,10 @@
                             @endforeach
                             </tbody>
                         </table>
+                        <div class="my-5">
+                            {{$movies->links()}}
+                        </div>
+                    
                     </div>
                 </div>
             </div>

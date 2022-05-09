@@ -55,4 +55,22 @@ class AdminMovieController extends Controller
 			'movie' => $movie,
 		]);
 	}
+
+	public function update(Movie $movie)
+	{
+		$data = request()->validate([
+			'title'           => 'min:3',
+			'title_ge' 	      => 'min:3',
+		]);
+
+		$movie->update([
+			'title'           => [
+				'en' => $data['title'],
+				'ka' => $data['title_ge'],
+			],
+			'thumbnail'       => request()->file('thumbnail')->store('thumbnails'),
+		]);
+
+		return redirect('/admin/movies/list');
+	}
 }

@@ -12,6 +12,8 @@ class Quotes extends Model
 
 	use HasTranslations;
 
+	protected $guarded = [];
+
 	public $translatable = ['text'];
 
 	public function movie()
