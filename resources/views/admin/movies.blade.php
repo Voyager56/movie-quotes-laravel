@@ -22,8 +22,8 @@
                             <thead class="bg-gray-50">
                             <tr class="bg-black">
                                 <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Name/სახელი</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-white">Thumbnail</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-white">Quotes</th>
+                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-white">Thumbnail/ფოტო</th>
+                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-white">Quotes/ციტატები</th>
                                 <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                                     <span class="sr-only">Edit</span>
                                 </th>

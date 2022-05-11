@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Models\User;
 
 class CreateAdmin extends Command
 {
@@ -11,7 +12,7 @@ class CreateAdmin extends Command
 	 *
 	 * @var string
 	 */
-	protected $signature = 'make:admin';
+	protected $signature = 'make:admin {email} {password}';
 
 	/**
 	 * The console command description.
@@ -27,6 +28,12 @@ class CreateAdmin extends Command
 	 */
 	public function handle()
 	{
-		return 0;
+		$email = $this->argument('email');
+		$password = $this->argument('password');
+
+		User::create([
+			'email'    => $email,
+			'password' => $password,
+		]);
 	}
 }

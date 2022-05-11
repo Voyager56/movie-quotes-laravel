@@ -17,10 +17,10 @@
 
     <div class="mt-10">
         @auth
-        <div class="bg-white w-20 h-20">
-            @admin
+        <div class="w-20 h-20">
+            {{-- @admin --}}
                 <a href="/admin/movies/list">Movie List</a>
-            @endadmin
+            {{-- @endadmin --}}
 
             <a href="en/admin/logout">Log Out</a>
 

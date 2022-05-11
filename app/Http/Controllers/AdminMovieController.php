@@ -40,6 +40,7 @@ class AdminMovieController extends Controller
 		$movie['slug'] = Str::slug(request('title'));
 
 		$slug = Movie::where('slug', $movie['slug'])->first();
+
 		if ($slug)
 		{
 			return back()->with('message', 'Movie already exists');

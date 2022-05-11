@@ -10,7 +10,7 @@
 <div class="flex flex-col items-center">
 
     
-    <h1 class="text-white text-2xl my-10">Add A New Movie</h1>
+    <h1 class="text-white text-2xl my-10">Edit A Movie</h1>
     <div class="mb-6 flex flex-col items-center ">
         <label form="movie-update" for="title" class="block mb-2 uppercase font-bold text-xs text-white">Title</label>
         <input form="movie-update" type="text" name="title" id="title" class="border border-gray-400 p-2 text-black" value="{{$movie->getTranslations('title')['en']}}" required>

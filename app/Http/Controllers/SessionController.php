@@ -21,6 +21,8 @@ class SessionController extends Controller
 			'password' => 'required',
 		]);
 
+		// dd($credentials);
+
 		if (!auth()->attempt($credentials))
 		{
 			return back()
