@@ -19,15 +19,15 @@
         @auth
         <div class="w-20 h-20 absolute right-3 top-3 text-white">
                 <a href="/admin/movies/list">Movie List</a>
-            <a href="en/admin/logout">Log Out</a>
 
-            <form id="logout-form" method="POST" action="en/admin/logout" class="hidden">
+            <button type="submit" form="logout-form">Log Out</button>
+            <form id="logout-form" method="POST" action="/logout" class="hidden">
                 @csrf
             </form>
         </div>
 
         @else
-            <a href="/en/admin/login" class="text-white text-xs font-bold uppercase ml-3">Log In</a>
+            <a href="/en/admin/login" class="text-white text-xl font-bold uppercase ml-3 absolute right-3 top-3">Log In</a>
 
         @endauth
     </div>
