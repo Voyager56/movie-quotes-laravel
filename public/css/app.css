@@ -453,6 +453,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .left-5 {
   left: 1.25rem;
 }
+.top-3 {
+  top: 0.75rem;
+}
 .m-5 {
   margin: 1.25rem;
 }
@@ -536,6 +539,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-20 {
   height: 5rem;
+}
+.h-\[100vh\] {
+  height: 100vh;
 }
 .w-\[300px\] {
   width: 300px;
@@ -793,6 +799,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;

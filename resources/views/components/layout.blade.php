@@ -13,15 +13,12 @@
     </style>
 </head>
 
-<body class="flex flex-col items-center justify-center">
+<body class="flex flex-col items-center justify-center h-[100vh]">
 
     <div class="mt-10">
         @auth
-        <div class="w-20 h-20">
-            {{-- @admin --}}
+        <div class="w-20 h-20 absolute right-3 top-3 text-white">
                 <a href="/admin/movies/list">Movie List</a>
-            {{-- @endadmin --}}
-
             <a href="en/admin/logout">Log Out</a>
 
             <form id="logout-form" method="POST" action="en/admin/logout" class="hidden">

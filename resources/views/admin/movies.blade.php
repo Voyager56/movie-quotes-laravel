@@ -8,7 +8,7 @@
     <div class="px-4 sm:px-6 lg:px-8 mt-10">
         <div class="sm:flex sm:items-center">
             <div class="sm:flex-auto">
-                <h1 class="text-xl font-semibold text-gray-900">Movies</h1>
+                <a href="/" class="text-xl font-semibold text-gray-900">Movies</a>
             </div>
             <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                 <a href="create" type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">Add Movie</a>
@@ -27,6 +27,9 @@
                                 <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                                     <span class="sr-only">Edit</span>
                                 </th>
+                                <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
+                                    <span class="sr-only">Delete</span>
+                                </th>
                             </tr>
                             </thead>
                             <tbody class="bg-white">
@@ -44,6 +47,13 @@
                                     </td>
                                     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                         <a href="edit/{{$movie->slug}}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                    </td>
+                                    <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                        <form action="delete/{{$movie->slug}}" method="POST" class="text-red-600 hover:text-indigo-900">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
