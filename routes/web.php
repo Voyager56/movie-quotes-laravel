@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 */
 
-Route::get('locale/{lang}', function ($locale) {
-	app()->setLocale($locale);
-	session()->put('locale', $locale);
+Route::get('locale/{lang}', function ($lang) {
+	app()->setLocale($lang);
+	session()->put('lang', $lang);
 	return redirect()->back();
 });
 

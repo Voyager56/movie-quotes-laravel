@@ -2,14 +2,16 @@
 @section('content')
 
 <head>
-<title>{{$movie->getTranslations('title')[$lang]}} Quotes</title>
+<title>{{$movie->title}} Quotes</title>
 </head>
 
 
 <div class="mt-20">
 
+
+
     
-    <h1 class="text-4xl   text-white" >{{$movie->getTranslations('title')[$lang]}}</h1>
+    <h1 class="text-4xl   text-white" >{{$movie->title}}</h1>
     
     
     <x-language-buttons :lang="$lang" route="{{$movie->slug}}"/>

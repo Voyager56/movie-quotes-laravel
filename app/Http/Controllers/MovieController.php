@@ -11,7 +11,7 @@ class MovieController extends Controller
 	{
 		return view('welcome', [
 			'movie' => Quotes::all()->random()->movie,
-			'lang'  => session()->get('locale'),
+			'lang'  => session()->get('lang'),
 		]);
 	}
 
@@ -19,7 +19,7 @@ class MovieController extends Controller
 	{
 		return view('show', [
 			'movie' => $movie,
-			'lang'  => session()->get('locale'),
+			'lang'  => session()->get('lang'),
 		]);
 	}
 }
