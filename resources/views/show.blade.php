@@ -20,7 +20,7 @@
             @foreach($movie->quotes as $quote)
             <div class="flex flex-col items-baseline mt-10 bg-white">
                 <img width="500" src='{{asset('/storage/' . $movie->thumbnail)}}' alt="">
-                <h2 class="text-xl max-w-[500px] p-5">"{{$quote->getTranslations('text')[$lang]}}"</h2>
+                <h2 class="text-xl max-w-[500px] p-5">"{{$quote->text}}"</h2>
             </div>
             @endforeach
         </article>

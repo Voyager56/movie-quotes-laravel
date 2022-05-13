@@ -7,19 +7,19 @@ use App\Models\Quotes;
 
 class MovieController extends Controller
 {
-	public function index($lang = 'en')
+	public function index()
 	{
 		return view('welcome', [
 			'movie' => Quotes::all()->random()->movie,
-			'lang'  => $lang,
+			'lang'  => session()->get('locale'),
 		]);
 	}
 
-	public function show($lang, Movie $movie)
+	public function show(Movie $movie)
 	{
 		return view('show', [
 			'movie' => $movie,
-			'lang'  => $lang,
+			'lang'  => session()->get('locale'),
 		]);
 	}
 }

@@ -7,11 +7,8 @@
 <body>
     <div class="px-4 sm:px-6 lg:px-8 mt-10">
         <div class="sm:flex sm:items-center">
-            <div class="sm:flex-auto">
-                <a href="/" class="text-xl font-semibold text-gray-900">Movies</a>
-            </div>
             <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-                <a href="create" type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">Add Movie</a>
+                <a href="create" type="button" class="absolute right-3 top-3 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">Add Movie</a>
             </div>
         </div>
         <div class="mt-8 flex flex-col">

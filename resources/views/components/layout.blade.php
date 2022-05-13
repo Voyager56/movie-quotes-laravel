@@ -13,7 +13,7 @@
     </style>
 </head>
 
-<body class="flex flex-col items-center justify-center h-[100vh]">
+<body class="flex flex-col items-center justify-center ">
 
     <div class="mt-10">
         @auth
@@ -27,7 +27,7 @@
         </div>
 
         @else
-            <a href="/en/admin/login" class="text-white text-xl font-bold uppercase ml-3 absolute right-3 top-3">Log In</a>
+            <a href="/admin/login" class="text-white text-xl font-bold uppercase ml-3 absolute right-3 top-3">Log In</a>
 
         @endauth
     </div>
