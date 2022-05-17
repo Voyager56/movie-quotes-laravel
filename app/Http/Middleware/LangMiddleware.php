@@ -17,7 +17,7 @@ class LangMiddleware
 	 */
 	public function handle(Request $request, Closure $next)
 	{
-		app()->setLocale(session()->get('lang') ? session()->get('lang') : 'en');
+		app()->setLocale(session()->get('lang') ? session()->get('lang') : session()->set('lang', 'en'));
 		return $next($request);
 	}
 }
