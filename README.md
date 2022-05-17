@@ -75,3 +75,5 @@ and for live reloading: `npm run watch`
 
 -   [Draw Sql](#https://drawsql.app/redberry-18/diagrams/moviequotes)
 -   [Spatie LaraveL Translatable](#https://spatie.be/docs/laravel-translatable/v6/introduction)
+
+-   to make an user run `php artisan make:admin email password`
