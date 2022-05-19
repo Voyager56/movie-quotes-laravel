@@ -20,7 +20,7 @@
         
         <article class="flex flex-col relative" >
             @foreach($movie->quotes as $quote)
-            <div class="flex flex-col items-baseline mt-10 bg-white">
+            <div class="flex flex-col items-baseline mt-10 bg-white w-fit">
                 <img width="500" src='{{asset('/storage/' . $movie->thumbnail)}}' alt="">
                 <h2 class="text-xl max-w-[500px] p-5">"{{$quote->text}}"</h2>
             </div>
