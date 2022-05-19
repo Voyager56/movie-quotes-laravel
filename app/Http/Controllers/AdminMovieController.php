@@ -3,25 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Str;
+use Illuminate\View\View;
 
 class AdminMovieController extends Controller
 {
-	public function index()
+	public function index(): View
 	{
 		return view('admin.movies', [
 			'movies' => Movie::paginate(5)->withQueryString(),
 		]);
 	}
 
-	public function create()
+	public function create(): View
 	{
 		return view(
 			'admin.create',
 		);
 	}
 
-	public function store()
+	public function store(): RedirectResponse
 	{
 		$data = request()->validate([
 			'title'           => 'required',
@@ -50,14 +52,14 @@ class AdminMovieController extends Controller
 		return redirect('/admin/movies/list');
 	}
 
-	public function edit(Movie $movie)
+	public function edit(Movie $movie): View
 	{
 		return view('admin.edit', [
 			'movie' => $movie,
 		]);
 	}
 
-	public function update(Movie $movie)
+	public function update(Movie $movie): RedirectResponse
 	{
 		$data = request()->validate([
 			'title'           => 'min:3',
@@ -75,7 +77,7 @@ class AdminMovieController extends Controller
 		return redirect('/admin/movies/list');
 	}
 
-	public function destroy(Movie $movie)
+	public function destroy(Movie $movie): RedirectResponse
 	{
 		$movie->delete();
 		return redirect('/admin/movies/list');

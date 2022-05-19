@@ -26,7 +26,7 @@ class CreateAdmin extends Command
 	 *
 	 * @return int
 	 */
-	public function handle()
+	public function handle(): void
 	{
 		$email = $this->argument('email');
 		$password = $this->argument('password');

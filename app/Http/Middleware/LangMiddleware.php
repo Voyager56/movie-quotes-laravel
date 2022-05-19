@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class LangMiddleware
 {
@@ -15,7 +16,7 @@ class LangMiddleware
 	 *
 	 * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
 	 */
-	public function handle(Request $request, Closure $next)
+	public function handle(Request $request, Closure $next): Response
 	{
 		app()->setLocale(session()->get('lang') ?: 'en');
 		session()->put('lang', app()->getLocale());

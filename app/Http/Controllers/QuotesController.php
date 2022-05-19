@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use App\Models\Quotes;
+use Illuminate\Http\RedirectResponse;
 
 class QuotesController extends Controller
 {
-	public function store(Movie $movie)
+	public function store(Movie $movie): RedirectResponse
 	{
 		// dd(request()->all());
 		$data = request()->validate([
@@ -26,7 +27,7 @@ class QuotesController extends Controller
 		return redirect()->back();
 	}
 
-	public function destroy(Movie $movie, Quotes $quote)
+	public function destroy(Movie $movie, Quotes $quote): RedirectResponse
 	{
 		$quote->delete();
 		return redirect()->back();
