@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\QuoteRequest;
 use App\Models\Movie;
 use App\Models\Quotes;
 use Illuminate\Http\RedirectResponse;
 
 class QuotesController extends Controller
 {
-	public function store(Movie $movie): RedirectResponse
+	public function store(Movie $movie, QuoteRequest $request): RedirectResponse
 	{
 		// dd(request()->all());
-		$data = request()->validate([
-			'ka' => 'required',
-			'en' => 'required',
-		]);
+		$data = $request->validated();
 
 		$quote = [
 			'text' => [

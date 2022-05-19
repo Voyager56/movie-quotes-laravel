@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MovieRequest;
+use App\Http\Requests\MovieUpdateRequest;
 use App\Models\Movie;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Str;
@@ -23,23 +25,11 @@ class AdminMovieController extends Controller
 		);
 	}
 
-	public function store(): RedirectResponse
+	public function store(MovieRequest $request): RedirectResponse
 	{
-		$data = request()->validate([
-			'title'           => 'required',
-			'title_ge' 	      => 'required',
-			'thumbnail'       => 'required',
-		]);
+		$data = $request->validated();
 
-		$movie = [
-			'title'           => [
-				'en' => $data['title'],
-				'ka' => $data['title_ge'],
-			],
-			'thumbnail'       => request()->file('thumbnail')->store('thumbnails'),
-		];
-
-		$movie['slug'] = Str::slug(request('title'));
+		$movie = $this->formatData($data);
 
 		$slug = Movie::where('slug', $movie['slug'])->first();
 
@@ -47,7 +37,6 @@ class AdminMovieController extends Controller
 		{
 			return back()->with('message', 'Movie already exists');
 		}
-
 		Movie::create($movie);
 		return redirect('/admin/movies/list');
 	}
@@ -59,20 +48,11 @@ class AdminMovieController extends Controller
 		]);
 	}
 
-	public function update(Movie $movie): RedirectResponse
+	public function update(Movie $movie, MovieUpdateRequest $request): RedirectResponse
 	{
-		$data = request()->validate([
-			'title'           => 'min:3',
-			'title_ge' 	      => 'min:3',
-		]);
+		$data = $request->validated();
 
-		$movie->update([
-			'title'           => [
-				'en' => $data['title'],
-				'ka' => $data['title_ge'],
-			],
-			'thumbnail'       => request()->file('thumbnail') ? request()->file('thumbnail')->store('thumbnails') : $movie->thumbnail,
-		]);
+		$movie->update($this->formatData($data, $movie));
 
 		return redirect('/admin/movies/list');
 	}
@@ -81,5 +61,15 @@ class AdminMovieController extends Controller
 	{
 		$movie->delete();
 		return redirect('/admin/movies/list');
+	}
+
+	private function formatData(array $data, Movie $movie = new Movie()): array
+	{
+		return ['title'           => [
+			'en' => $data['title'],
+			'ka' => $data['title_ge'],
+		],
+			'thumbnail'       => request()->file('thumbnail') ? request()->file('thumbnail')->store('thumbnails') : $movie->thumbnail,
+			'slug'            => Str::slug($data['title']), ];
 	}
 }
