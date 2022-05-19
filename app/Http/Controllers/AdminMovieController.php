@@ -69,7 +69,7 @@ class AdminMovieController extends Controller
 				'en' => $data['title'],
 				'ka' => $data['title_ge'],
 			],
-			'thumbnail'       => request()->file('thumbnail')->store('thumbnails'),
+			'thumbnail'       => request()->file('thumbnail') ? request()->file('thumbnail')->store('thumbnails') : $movie->thumbnail,
 		]);
 
 		return redirect('/admin/movies/list');

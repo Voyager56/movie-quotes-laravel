@@ -34,7 +34,7 @@
         <label form="movie-update" for="thumbnail" class="block mb-5 uppercase font-bold text-xs text-white">Current Thumbnail: 
             <img class="mt-3" width="150" src="{{asset('/storage/' . $movie->thumbnail)}}" alt="movie thumbnail">
         </label>
-        <input form="movie-update" name="thumbnail" id="thumbnail" type="file" class="border border-gray-400 p-2 text-white" required>
+        <input form="movie-update" name="thumbnail" id="thumbnail" type="file" class="border border-gray-400 p-2 text-white">
 
         
         @error('thumbnail')
