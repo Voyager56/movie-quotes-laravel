@@ -15,6 +15,12 @@
 
 <body class="flex flex-col items-center justify-center ">
 
+    <div class="sm:flex sm:items-center">
+        <div class="sm:flex-auto">
+            <a href="/" class="text-xl font-semibold text-gray-900 absolute left-5">Movies</a>
+        </div>
+    </div>
+
     <div class="mt-10">
         @auth
         <div class="w-20 h-20 absolute right-3 top-3 text-white">
