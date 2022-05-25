@@ -4,7 +4,6 @@
 
 <body class="flex flex-col items-center">
 
-    {{-- @dd(app()->getLocale()) --}}
 
     <x-language-buttons :lang="$lang" route=""/>
 

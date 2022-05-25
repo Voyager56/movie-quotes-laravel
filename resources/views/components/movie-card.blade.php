@@ -1,6 +1,5 @@
 @props(['movie','lang'])
 
-{{--@dd(app()->getLocale())--}}
 
 <article class="p-5 mt-10 flex flex-col items-center">
     <img src="{{asset('/storage/' . $movie->thumbnail)}}" alt="movie poster" width="500">

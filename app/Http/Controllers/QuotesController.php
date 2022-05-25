@@ -11,7 +11,6 @@ class QuotesController extends Controller
 {
 	public function store(Movie $movie, QuoteRequest $request): RedirectResponse
 	{
-		// dd(request()->all());
 		$data = $request->validated();
 
 		$quote = [
