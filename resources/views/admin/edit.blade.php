@@ -46,7 +46,7 @@
     @foreach ($movie->quotes as $quote)
 
     
-    <form  class="bg-white rounded p-5 flex justify-between mb-10 w-[300px] " method="POST" action="/admin/movies/{{ $movie->slug }}/{{$quote->id}}">
+    <form  class="bg-white rounded p-5 flex justify-between mb-10 w-[300px] " method="POST" action="{{route('quotes.destroy', [$movie->slug, $quote])}}">
         @csrf
         @method('delete')
         <div>
@@ -58,7 +58,7 @@
     @endforeach
 
     <div class="bg-white rounded-xl p-5 m-5">
-        <form id="quote-create" action="{{$movie->slug}}/create" method="POST" enctype="multipart/form-data" class="flex flex-col items-center">
+        <form id="quote-create" action="{{route('quotes.store', $movie->slug)}}" method="POST" enctype="multipart/form-data" class="flex flex-col items-center">
             @csrf
             <div class="mb-6 flex flex-col items-center ">
                 <label for="ka" class="block mb-2 uppercase font-bold text-xs text-black">ციტატა</label>

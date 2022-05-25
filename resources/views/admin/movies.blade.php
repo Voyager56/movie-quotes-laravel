@@ -46,7 +46,7 @@
                                         <a href="edit/{{$movie->slug}}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                     </td>
                                     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                        <form action="delete/{{$movie->slug}}" method="POST" class="text-red-600 hover:text-indigo-900">
+                                        <form action="{{route('movies.delete', $movie->slug)}}" method="POST" class="text-red-600 hover:text-indigo-900">
                                             @csrf
                                             @method('delete')
                                             <button type="submit">Delete</button>

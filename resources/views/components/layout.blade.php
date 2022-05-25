@@ -24,7 +24,7 @@
     <div class="mt-10">
         @auth
         <div class="w-20 h-20 absolute right-3 top-3 text-white">
-                <a href="/admin/movies/list">Movie List</a>
+                <a href="movies/list">Movie List</a>
 
             <button type="submit" form="logout-form">Log Out</button>
             <form id="logout-form" method="POST" action="/logout" class="hidden">
@@ -33,7 +33,7 @@
         </div>
 
         @else
-            <a href="/admin/login" class="text-white text-xl font-bold uppercase ml-3 absolute right-3 top-3">Log In</a>
+            <a href="{{route('login')}}" class="text-white text-xl font-bold uppercase ml-3 absolute right-3 top-3">Log In</a>
 
         @endauth
     </div>

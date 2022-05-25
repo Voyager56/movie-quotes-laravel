@@ -39,7 +39,7 @@ use App\Http\Controllers\Controller;
  			return back()->with('message', 'Movie already exists');
  		}
  		Movie::create($movie);
- 		return redirect('/admin/movies/list');
+ 		return redirect()->back();
  	}
 
  	public function edit(Movie $movie): View
@@ -55,13 +55,13 @@ use App\Http\Controllers\Controller;
 
  		$movie->update($this->formatData($data, $movie));
 
- 		return redirect('/admin/movies/list');
+ 		return redirect('/movies/list');
  	}
 
  	public function destroy(Movie $movie): RedirectResponse
  	{
  		$movie->delete();
- 		return redirect('/admin/movies/list');
+ 		return redirect('/movies/list');
  	}
 
  	private function formatData(array $data, Movie $movie = new Movie()): array

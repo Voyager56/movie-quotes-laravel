@@ -1,7 +1,7 @@
 @extends('components.admin-layout')
 @section('content')
 
-<form action="/admin/movies" method="POST" enctype="multipart/form-data" class="flex flex-col items-center">
+<form action="{{route('admin.movies.store')}}" method="POST" enctype="multipart/form-data" class="flex flex-col items-center">
     @csrf
     <h1 class="text-white text-2xl my-10">Add A New Movie</h1>
     <div class="mb-6 flex flex-col items-center ">

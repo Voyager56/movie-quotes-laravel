@@ -16,7 +16,7 @@
 
     <div class="sm:flex sm:items-center">
         <div class="sm:flex-auto">
-            <a href="/" class="text-xl font-semibold text-gray-900 absolute left-5">Movies</a>
+            <a href="{{route('home')}}" class="text-xl font-semibold text-gray-900 absolute left-5">Movies</a>
         </div>
     </div>
     
