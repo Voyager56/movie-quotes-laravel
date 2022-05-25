@@ -40,10 +40,9 @@
                                     </td>
                                     <td class="whitespace-nowrap px-3 py-4 text-xl text-gray-500">
                                         {{$movie->quotes->count()}}
-                                        <a href=""></a>
                                     </td>
                                     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                        <a href="edit/{{$movie->slug}}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                        <a href="{{route('movies.edit', $movie->slug)}}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                     </td>
                                     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                         <form action="{{route('movies.delete', $movie->slug)}}" method="POST" class="text-red-600 hover:text-indigo-900">

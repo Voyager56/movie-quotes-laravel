@@ -20,18 +20,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MovieController::class, 'index'])->name('home');
 Route::get('/{movie:slug}', [MovieController::class, 'show'])->name('movie.show');
 
-Route::get('/movies/list', [AdminMovieController::class, 'index'])->name('movies.list');
-Route::get('/movies/create', [AdminMovieController::class, 'create'])->name('movies.create');
-Route::post('/movies', [AdminMovieController::class, 'store'])->name('movies.store');
-Route::get('/movies/edit/{movie:slug}', [AdminMovieController::class, 'edit'])->name('movies.edit');
-Route::post('/movies/edit/{movie:slug}', [AdminMovieController::class, 'update'])->name('movies.update');
-Route::delete('/delete/{movie:slug}', [AdminMovieController::class, 'destroy'])->name('movies.delete');
-
 Route::post('logout', [SessionController::class, 'destroy'])->name('logout');
-Route::get('login', [SessionController::class, 'create'])->name('login');
-Route::post('login', [SessionController::class, 'store'])->name('login.store');
-
-Route::delete('movies/{movie:slug}/{quote}', [QuotesController::class, 'destroy'])->name('quotes.destroy');
-Route::post('movies/edit/{movie:slug}/create', [QuotesController::class, 'store'])->name('quotes.store');
+Route::get('admin/login', [SessionController::class, 'create'])->name('login');
+Route::post('admin/login', [SessionController::class, 'store'])->name('login.store');
 
 Route::get('locale/{lang}', [LangController::class, 'index'])->name('locale');
+
+Route::middleware('auth')->group(function () {
+	Route::prefix('movies')->group(function () {
+		Route::get('/list', [AdminMovieController::class, 'index'])->name('movies.list');
+		Route::get('/create', [AdminMovieController::class, 'create'])->name('movies.create');
+		Route::post('/', [AdminMovieController::class, 'store'])->name('movies.store');
+		Route::get('/edit/{movie:slug}', [AdminMovieController::class, 'edit'])->name('movies.edit');
+		Route::post('/edit/{movie:slug}', [AdminMovieController::class, 'update'])->name('movies.update');
+		Route::delete('/delete/{movie:slug}', [AdminMovieController::class, 'destroy'])->name('movies.delete');
+
+		Route::delete('{movie:slug}/{quote}', [QuotesController::class, 'destroy'])->name('quotes.destroy');
+		Route::post('edit/{movie:slug}/create', [QuotesController::class, 'store'])->name('quotes.store');
+	});
+});

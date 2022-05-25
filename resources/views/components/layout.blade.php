@@ -17,24 +17,24 @@
 
     <div class="sm:flex sm:items-center">
         <div class="sm:flex-auto">
-            <a href="/" class="text-xl font-semibold text-gray-900 absolute left-5">Movies</a>
+            <a href="{{route('home')}}" class="text-xl font-semibold text-gray-900 absolute left-5">Movies</a>
         </div>
     </div>
 
     <div class="mt-10">
+
         @auth
         <div class="w-20 h-20 absolute right-3 top-3 text-white">
-                <a href="movies/list">Movie List</a>
+                <a href="{{route('movies.list')}}">Movie List</a>
 
             <button type="submit" form="logout-form">Log Out</button>
-            <form id="logout-form" method="POST" action="/logout" class="hidden">
+            <form id="logout-form" method="POST" action="{{route('logout')}}" class="hidden">
                 @csrf
             </form>
         </div>
 
         @else
             <a href="{{route('login')}}" class="text-white text-xl font-bold uppercase ml-3 absolute right-3 top-3">Log In</a>
-
         @endauth
     </div>
 
