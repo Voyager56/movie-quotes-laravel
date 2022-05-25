@@ -52,6 +52,8 @@ Initialize the database: `php artisan migrate:fresh --seed`
 
 Link storage directory to public directory: `php artisan storage:link`
 
+to make an Admin-User run `php artisan make:admin email password`
+
 ## Development
 
 to run the application: `php artisan serve`
@@ -75,5 +77,3 @@ and for live reloading: `npm run watch`
 
 -   [Draw Sql](https://drawsql.app/redberry-18/diagrams/moviequotes)
 -   [Spatie LaraveL Translatable](https://spatie.be/docs/laravel-translatable/v6/introduction)
-
--   to make an Admin-User run `php artisan make:admin email password`
